@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  node0:
+    build: .
+    container_name: raft_node0
+    command: python3 -u raft_node.py 0
+    ports:
+      - "50060:50060"
+    networks:
+      - raft_network
+    environment:
+      - NODE_ID=0
+      - PYTHONUNBUFFERED=1
+
+  node1:
+    build: .
+    container_name: raft_node1
+    command: python3 -u raft_node.py 1
+    ports:
+      - "50061:50061"
+    networks:
+      - raft_network
+    environment:
+      - NODE_ID=1
+      - PYTHONUNBUFFERED=1
+
+  node2:
+    build: .
+    container_name: raft_node2
+    command: python3 -u raft_node.py 2
+    ports:
+      - "50062:50062"
+    networks:
+      - raft_network
+    environment:
+      - NODE_ID=2
+      - PYTHONUNBUFFERED=1
+
+  node3:
+    build: .
+    container_name: raft_node3
+    command: python3 -u raft_node.py 3
+    ports:
+      - "50063:50063"
+    networks:
+      - raft_network
+    environment:
+      - NODE_ID=3
+      - PYTHONUNBUFFERED=1
+
+  node4:
+    build: .
+    container_name: raft_node4
+    command: python3 -u raft_node.py 4
+    ports:
+      - "50064:50064"
+    networks:
+      - raft_network
+    environment:
+      - NODE_ID=4
+      - PYTHONUNBUFFERED=1
+
+  client:
+    build: .
+    container_name: raft_client
+    command: python3 -u raft_client.py
+    networks:
+      - raft_network
+    depends_on:
+      - node0
+      - node1
+      - node2
+      - node3
+      - node4
+    stdin_open: true
+    tty: true
+    environment:
+      - PYTHONUNBUFFERED=1
+
+networks:
+  raft_network:
+    driver: bridge
