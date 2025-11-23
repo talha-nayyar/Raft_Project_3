@@ -2,6 +2,9 @@
 
 An implementation of the Raft consensus algorithm featuring leader election, log replication, and fault tolerance. This implementation is on the Group 21 Distributed E-Commerce System, and runs in a containerized 5-node cluster and provides a complete distributed key-value store.
 
+## Github Link
+https://github.com/talha-nayyar/Raft_Project_3/tree/Raft-Implementation/raft_cluster
+
 ## Table of Contents
 
 - [Overview](#overview)
