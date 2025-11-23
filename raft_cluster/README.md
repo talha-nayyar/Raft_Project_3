@@ -604,11 +604,11 @@ This implementation ensures:
 ---
 
 ## External Refrences Used
-1: https://www.geeksforgeeks.org/system-design/raft-consensus-algorithm/
-2: Project 3 Descriptions
-3: Docker Documentation
-4: Claude Opus to generate biolerplate code for implementations and test suite environment (only) to help in ease of deploying the tests.
-5: Google Gemini to develop documentation and debugging.
+- 1: https://www.geeksforgeeks.org/system-design/raft-consensus-algorithm/
+- 2: Project 3 Descriptions
+- 3: Docker Documentation
+- 4: Claude Opus to generate biolerplate code for implementations and test suite environment (only) to help in ease of deploying the tests.
+- 5: Google Gemini to develop documentation and debugging.
 
 ## License
 
